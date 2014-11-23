@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @company.description %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @company.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @company.state %>
+</p>
+
+<p>
+  <strong>Ceo:</strong>
+  <%= @company.ceo %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @company.source %>
+</p>
+
+<p>
+  <strong>Revenue:</strong>
+  <%= @company.revenue %>
+</p>
+
+<p>
+  <strong>Ebitda:</strong>
+  <%= @company.ebitda %>
+</p>
+
+<p>
+  <strong>Margin:</strong>
+  <%= @company.margin %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
