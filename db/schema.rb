@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141123180852) do
+ActiveRecord::Schema.define(version: 20141124002948) do
 
   create_table "companies", force: true do |t|
     t.text     "description"
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 20141123180852) do
     t.datetime "updated_at"
     t.string   "last_name"
     t.string   "email"
+    t.string   "password_hash"
+    t.string   "password_salt"
   end
 
 end
