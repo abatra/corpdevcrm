@@ -11,18 +11,41 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :takeaways %><br>
-    <%= f.text_area :takeaways %>
+  <p>
+    Key Takeaways: <%= f.text_field :takeaways %>
+  </p>
+  <p>
+    Next Steps: <%= f.text_field :nextsteps %>
+  </p>
+  <%# for company in @post.companies %>
+  
+  <% for company in @post.companies %>
+    <%= fields_for "company", company do |c| %>
+    <p>
+      Company: <%= c.text_field :name %>
+    </p>
+    <% end %>
+  <% end %>
+
+
+<!--   <div class="field">
+    <%#= f.label :takeaways %><br>
+    <%#= f.text_area :takeaways %>
   </div>
   <div class="field">
-    <%= f.label :nextsteps %><br>
-    <%= f.text_area :nextsteps %>
+    <%#= f.label :nextsteps %><br>
+    <%#= f.text_area :nextsteps %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <%#= f.label :user_id %><br>
+    <%#= f.number_field :user_id %>
   </div>
+
+  <%#= fields_for @company do |c| %>
+    <div class="field">
+      <%#= c.label :name %><br>
+      <%#= c.text_area :name %>
+    </div> -->
   <div class="actions">
     <%= f.submit %>
   </div>
