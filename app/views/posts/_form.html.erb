@@ -19,13 +19,13 @@
   </p>
   <%# for company in @post.companies %>
   
-  <% for company in @post.companies %>
-    <%= fields_for "company", company do |c| %>
+  <%# for company in @post.companies %>
+    <%= f.fields_for :companies do |c| %>
     <p>
       Company: <%= c.text_field :name %>
     </p>
     <% end %>
-  <% end %>
+  <%# end %>
 
 
 <!--   <div class="field">

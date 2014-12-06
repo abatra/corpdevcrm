@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-    3.times { @post.companies.build }
+    @post.companies.build
   end
 
   # GET /posts/1/edit
@@ -76,6 +76,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:takeaways, :nextsteps, :user_id)
+      params.require(:post).permit(:takeaways, :nextsteps, :user_id, :companies_attributes => [:id, :name])
     end
 end
