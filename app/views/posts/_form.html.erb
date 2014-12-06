@@ -11,22 +11,25 @@
     </div>
   <% end %>
 
-  <p>
-    Key Takeaways: <%= f.text_field :takeaways %>
-  </p>
-  <p>
-    Next Steps: <%= f.text_field :nextsteps %>
-  </p>
-  <%# for company in @post.companies %>
-  
-  <%# for company in @post.companies %>
+    <p>
+      <%= f.label :date %> <%= f.date_select(:date, :order => [:month, :day, :year]) %>
+    </p>
+    <%= f.fields_for :bank do |b| %>
+    <p>
+      Bank: <%= b.text_field :name %>
+    </p>
+    <% end %>  
+    <p>
+      Key Takeaways: <%= f.text_field :takeaways %>
+    </p>
+    <p>
+      Next Steps: <%= f.text_field :nextsteps %>
+    </p>
     <%= f.fields_for :companies do |c| %>
     <p>
       Company: <%= c.text_field :name %>
     </p>
     <% end %>
-  <%# end %>
-
 
 <!--   <div class="field">
     <%#= f.label :takeaways %><br>

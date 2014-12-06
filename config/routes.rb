@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
  
+  resources :banks
+
   # root :to => "users#new"
   root :to => "users#home"
   get "log_in" => "sessions#new", :as => "log_in"

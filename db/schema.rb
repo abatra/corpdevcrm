@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124002948) do
+ActiveRecord::Schema.define(version: 20141206195949) do
+
+  create_table "banks", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "companies", force: true do |t|
     t.text     "description"
@@ -41,6 +47,10 @@ ActiveRecord::Schema.define(version: 20141124002948) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "bank_id"
+    t.date     "date"
+    t.string   "bankattendees"
+    t.string   "blkattendees"
   end
 
   create_table "users", force: true do |t|

@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @post.companies.build
+    @post.build_bank
   end
 
   # GET /posts/1/edit
@@ -27,6 +28,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
     #companies = [a, b, c] # a, b, c are company names from the form
     #companies.each do |companyname|
      # @post.companies << Company.create(:name=>companyname)
@@ -76,6 +78,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:takeaways, :nextsteps, :user_id, :companies_attributes => [:id, :name])
+      params.require(:post).permit(:date, :takeaways, :nextsteps, :user_id, :companies_attributes => [:id, :name], :bank_attributes => [:id, :name])
     end
 end
